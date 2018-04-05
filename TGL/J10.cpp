@@ -16,7 +16,7 @@ int Syn::present_person(){    // Function 10
 		ct = lex->NextTerminal();;
 	}else {
 		errors++;
-		lex->ReportError("unexpected \'" + ct + "\' found; <present_verb> expected  --> Function 14");
+		lex->ReportError("unexpected \'" + ct + "\' found; present_verb expected");
 		ct = lex->NextTerminal();
 	}
 	return errors;

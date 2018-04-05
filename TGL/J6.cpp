@@ -23,7 +23,7 @@ int Syn::modified_noun() {   // Function 6
 		errors += modifier();
 		errors += noun();
 	} else {
-		lex->ReportError("unexpected \'" + ct + "\' found; <modified_noun> expected");
+		lex->ReportError("unexpected \'" + ct + "\' found; modified_noun expected");
 		ct = lex->NextTerminal();
 		errors++;
 	}
