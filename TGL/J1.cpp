@@ -11,24 +11,30 @@
 
 int Syn::taunt() {    // Function 1
 	int errors = 0;
+	// taunts can start with your.
 	if (ct == "your") {
 		errors += sentence();
 		errors += taunt_tail();
+	// If they don't start with your, then they have to start with a noun.
 	} else if (ct == "hamster" || ct == "coconut" || ct == "duck" ||
 			   ct == "herring" || ct == "newt" || ct == "peril" ||
 			   ct == "chicken" || ct == "vole" || ct == "parrot" ||
 			   ct == "mouse" || ct == "twit") {
 		errors += noun();
+		// noun must be followed by an exclamation point.
 		if (ct != "!") {
 			lex->ReportError("unexpected \'" + ct + "\' found; ! expected");
 			ct = lex->NextTerminal();
 			errors++;
 		}
-		// need to get a new token after seeing '!'
-		ct = lex->NextTerminal();
-		errors+= taunt_tail();
+		else
+		{
+			// need to get a new token after seeing '!'
+			ct = lex->NextTerminal();
+			errors += taunt_tail();
+		}
 	} else {
-		lex->ReportError("unexpected \'" + ct + "\' found; taunt expected");
+		lex->ReportError("unexpected \'" + ct + "\' found; your or <noun> expected");
 		ct = lex->NextTerminal();
 		errors++;
 	}

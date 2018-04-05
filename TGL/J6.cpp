@@ -11,11 +11,14 @@
 
 int Syn::modified_noun() {   // Function 6
 	int errors = 0;
+	// First if block checks for nouns because they could be first.
 	if (ct == "hamster" || ct == "coconut" || ct == "duck" ||
 		ct == "herring" || ct == "newt" || ct == "peril" ||
 		ct == "chicken" || ct == "vole" || ct == "parrot" ||
 		ct == "mouse" || ct == "twit") {
 		errors += noun();
+	// If we get here, then it didn't start with a noun. The only other
+	// option is that it starts with a modifier.
 	} else if (ct == "silly" || ct == "wicked" || ct == "sordid" ||
 			   ct == "naughty" || ct == "repulsive" || ct == "malodorous" ||
 			   ct == "ill-tempered" || ct == "conspicuosly" || ct == "categorically" ||
@@ -23,7 +26,7 @@ int Syn::modified_noun() {   // Function 6
 		errors += modifier();
 		errors += noun();
 	} else {
-		lex->ReportError("unexpected \'" + ct + "\' found; modified_noun expected");
+		lex->ReportError("unexpected \'" + ct + "\' found; <noun> or <modifier> expected.");
 		ct = lex->NextTerminal();
 		errors++;
 	}
