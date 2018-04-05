@@ -17,21 +17,17 @@ using namespace std;
 *                                                                              *
 * Description: This function is designed to                                    *
 *******************************************************************************/
-Syn::Syn (Lex * LA)
-{
+Syn::Syn(Lex *LA) {
 	lex = LA;
 }
 
-Syn::~Syn ()
-{
+Syn::~Syn() {
 }
 
-int Syn::Start ()
-{
+int Syn::Start() {
 	int errors = 0;
 	ct = lex->NextTerminal();
-	while (ct != "")
-	{
+	while (ct != "") {
 		cout << ct << endl;
 		ct = lex->NextTerminal();
 		errors += taunt();
@@ -39,8 +35,7 @@ int Syn::Start ()
 	return errors;
 }
 
-int Syn::taunt ()
-{
+int Syn::taunt() {
 	int errors = 0;
 	return errors;
 }
