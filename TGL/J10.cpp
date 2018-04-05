@@ -12,11 +12,12 @@
 
 int Syn::present_person(){    // Function 10
 	int errors = 0;
+	// We expect a terminal state of present person to be here.
 	if (ct == "steed" || ct == "king" || ct == "first-born") {
-		ct = lex->NextTerminal();;
+		ct = lex->NextTerminal();
 	}else {
 		errors++;
-		lex->ReportError("unexpected \'" + ct + "\' found; present_verb expected");
+		lex->ReportError("unexpected \'" + ct + "\' found; <present_person> expected.");
 		ct = lex->NextTerminal();
 	}
 	return errors;

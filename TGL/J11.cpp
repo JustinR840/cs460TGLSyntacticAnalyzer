@@ -11,10 +11,11 @@
 
 int Syn::present_verb() {  // Function 14
 	int errors = 0;
+	// We expect a terminal state of present verb to be here.
 	if (ct == "is" || ct == "masquerades-as") {
-		ct = lex->NextTerminal();;
+		ct = lex->NextTerminal();
 	} else {
-		lex->ReportError("unexpected \'" + ct + "\' found; <present_verb> expected  --> Function 14");
+		lex->ReportError("unexpected \'" + ct + "\' found; <present_verb> expected.");
 		ct = lex->NextTerminal();
 		errors++;
 	}
