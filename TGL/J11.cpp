@@ -1,11 +1,11 @@
-/*******************************************************************************
-* File: J11.cpp													               *
-* Author: Colin Franceschini, Justin Ramos                                     *
-* Date: 4/4/18		                                                           *
-* Description: This is the present verb function that will be used to parse    *
-* 			   the taunt generation language      							   *
-* Comments:                                                                    *
-*******************************************************************************/
+/********************************************************************************
+* File: J11.cpp                                                                 *
+* Author: Colin Franceschini, Justin Ramos                                      *
+* Date: 4/4/18                                                                  *
+* Description: This is the present verb function that will be used to parse     *
+               the taunt generation language                                    *
+* Comments:                                                                     *
+********************************************************************************/
 
 #include "Syn.h"
 

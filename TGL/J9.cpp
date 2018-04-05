@@ -1,11 +1,11 @@
-/*******************************************************************************
-* File: J9.cpp													               *
-* Author: Colin Franceschini, Justin Ramos                                     *
-* Date: 4/4/18		                                                           *
-* Description: This is the past rel function that will be used to parse        *
-* 			   the taunt generation language      							   *
-* Comments:                                                                    *
-*******************************************************************************/
+/********************************************************************************
+* File: J9.cpp                                                                  *
+* Author: Colin Franceschini, Justin Ramos                                      *
+* Date: 4/4/18                                                                  *
+* Description: This is the past rel function that will be used to parse         *
+               the taunt generation language                                    *
+* Comments:                                                                     *
+********************************************************************************/
 
 #include "Syn.h"
 
