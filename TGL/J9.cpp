@@ -7,10 +7,22 @@
 * Comments:                                                                     *
 ********************************************************************************/
 
+#include <set>
 #include "Syn.h"
 
 int Syn::past_rel() {   // Function 9
+	static set<string> firsts = {"mother", "father", "grandmother", "grandfather", "godfather"};
+	static set<string> follows = {"was", "personified-a"};
+	
 	int errors = 0;
+
+	while(!firsts.count(ct) && !follows.count(ct))
+	{
+		lex->ReportError("unexpected '" + ct + "' found at beginning of <past_rel>.");
+		errors++;
+		ct = lex->NextTerminal();
+	}
+
 	// We expect a terminal state of past person here.
 	if (ct == "mother" || ct == "father" || ct == "grandmother" ||
 		ct == "grandfather" || ct == "godfather") {
